@@ -1,12 +1,134 @@
 import argparse
-import os
 import torch
-from exp.exp_main import Exp_Main
 import random
 import numpy as np
+from deap import base, creator, tools
+from exp.exp_main import Exp_Main
+
+# Define the GA parameters
+POP_SIZE = 20  # Population size
+GENS = 10      # Number of generations
+CXPB = 0.7     # Crossover probability
+MUTPB = 0.2    # Mutation probability
+
+# Define the individual and population
+creator.create("FitnessMin", base.Fitness, weights=(-1.0,))  # Minimize MSE
+creator.create("Individual", list, fitness=creator.FitnessMin)
+
+toolbox = base.Toolbox()
+toolbox.register("d_model", random.choice, [256, 512, 1024])  # Define ranges
+toolbox.register("batch_size", random.choice, [16, 32, 64])
+toolbox.register("learning_rate", random.uniform, 1e-5, 1e-3)
+# toolbox.register("freq", random.choice, ['s', 't', 'h', 'd', 'b', 'w', 'm'])
+toolbox.register("freq", random.choice, ['t', 'h'])
 
 
+# Register individual and population creation
+toolbox.register("individual", tools.initCycle, creator.Individual,
+                 (toolbox.d_model, toolbox.batch_size, toolbox.learning_rate, toolbox.freq))
+toolbox.register("population", tools.initRepeat, list, toolbox.individual)
+
+# Fitness function
+def evaluate(individual):
+    args = make_args()
+    d_model, batch_size, learning_rate, freq = individual
+    args.d_model = d_model
+    args.batch_size = batch_size
+    args.learning_rate = learning_rate
+    args.freq = freq
+    if freq == 'h':
+        args.data = 'ETTh1'
+    else:
+        args.data = 'ETTm1'
+
+    args.data_path = args.data + '.csv'
+    args.model_id = args.data + '_' + str(args.seq_len) + '_' + str(args.pred_len)
+
+    args.features = 'S'
+
+
+    print('Args in experiment:::')
+    print(args)
+
+    exp = Exp_Main(args)
+    # Initialize variables to track average MSE over multiple runs
+    total_mse = 0
+
+    # Run training and testing multiple times as per args.itr
+    for ii in range(args.itr):
+        # Set up the setting string with ii for tracking
+        setting = '{}_{}_{}_ft{}_sl{}_ll{}_pl{}_dm{}_nh{}_el{}_dl{}_df{}_fc{}_eb{}_dt{}_GAOptimization_{}'.format(
+            args.model_id,
+            args.model,
+            args.data,
+            args.features,
+            args.seq_len,
+            args.label_len,
+            args.pred_len,
+            args.d_model,
+            args.n_heads,
+            args.e_layers,
+            args.d_layers,
+            args.d_ff,
+            args.factor,
+            args.embed,
+            args.distil,
+            args.des, ii)
+
+        # Train the model
+        print('>>>>>>>start training : {}>>>>>>>>>>>>>>>>>>>>>>>>>>'.format(setting))
+        exp.train(setting)
+
+        # Test the model and accumulate the MSE
+        print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
+        mse, mae = exp.test(setting)
+        total_mse += mse  # Accumulate the MSE for averaging
+
+    # Calculate the average MSE over all iterations
+    avg_mse = total_mse / args.itr
+    return avg_mse
+
+toolbox.register("evaluate", evaluate)
+toolbox.register("mate", tools.cxBlend, alpha=0.5)
+toolbox.register("mutate", tools.mutGaussian, mu=0, sigma=1, indpb=0.2)
+toolbox.register("select", tools.selTournament, tournsize=3)
+
+# Main GA loop
 def main():
+    population = toolbox.population(n=POP_SIZE)
+    for gen in range(GENS):
+        print(f"-- Generation {gen} --")
+
+        # Evaluate individuals
+        fitnesses = map(toolbox.evaluate, population)
+        for ind, fit in zip(population, fitnesses):
+            ind.fitness.values = fit
+
+        # Select and clone the next generation's population
+        offspring = toolbox.select(population, len(population))
+        offspring = list(map(toolbox.clone, offspring))
+
+        # Apply crossover and mutation
+        for child1, child2 in zip(offspring[::2], offspring[1::2]):
+            if random.random() < CXPB:
+                toolbox.mate(child1, child2)
+                del child1.fitness.values
+                del child2.fitness.values
+
+        for mutant in offspring:
+            if random.random() < MUTPB:
+                toolbox.mutate(mutant)
+                del mutant.fitness.values
+
+        # Update population and evaluate new individuals
+        population[:] = offspring
+
+    # Get best individual after all generations
+    best_ind = tools.selBest(population, 1)[0]
+    print("Best individual is:", best_ind, "with fitness:", best_ind.fitness.values)
+
+
+def make_args():
     fix_seed = 2021
     random.seed(fix_seed)
     torch.manual_seed(fix_seed)
@@ -87,77 +209,7 @@ def main():
         args.device_ids = [int(id_) for id_ in device_ids]
         args.gpu = args.device_ids[0]
 
-    # synch parameters based on freq parameter
-    if args.freq == 'h':
-        args.data = 'ETTh1'
-    else:
-        args.data = 'ETTm1'
-
-    args.data_path = args.data + '.csv'
-    args.model_id = args.data + '_' + str(args.seq_len) + '_' + str(args.pred_len)
-    #
-
-    print('Args in experiment:')
-    print(args)
-
-    Exp = Exp_Main
-
-    if args.is_training:
-        for ii in range(args.itr):
-            # setting record of experiments
-            setting = '{}_{}_{}_ft{}_sl{}_ll{}_pl{}_dm{}_nh{}_el{}_dl{}_df{}_fc{}_eb{}_dt{}_{}_{}'.format(
-                args.model_id,
-                args.model,
-                args.data,
-                args.features,
-                args.seq_len,
-                args.label_len,
-                args.pred_len,
-                args.d_model,
-                args.n_heads,
-                args.e_layers,
-                args.d_layers,
-                args.d_ff,
-                args.factor,
-                args.embed,
-                args.distil,
-                args.des, ii)
-
-            exp = Exp(args)  # set experiments
-            print('>>>>>>>start training : {}>>>>>>>>>>>>>>>>>>>>>>>>>>'.format(setting))
-            exp.train(setting)
-
-            print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
-            exp.test(setting)
-
-            if args.do_predict:
-                print('>>>>>>>predicting : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
-                exp.predict(setting, True)
-
-            torch.cuda.empty_cache()
-    else:
-        ii = 0
-        setting = '{}_{}_{}_ft{}_sl{}_ll{}_pl{}_dm{}_nh{}_el{}_dl{}_df{}_fc{}_eb{}_dt{}_{}_{}'.format(args.model_id,
-                                                                                                      args.model,
-                                                                                                      args.data,
-                                                                                                      args.features,
-                                                                                                      args.seq_len,
-                                                                                                      args.label_len,
-                                                                                                      args.pred_len,
-                                                                                                      args.d_model,
-                                                                                                      args.n_heads,
-                                                                                                      args.e_layers,
-                                                                                                      args.d_layers,
-                                                                                                      args.d_ff,
-                                                                                                      args.factor,
-                                                                                                      args.embed,
-                                                                                                      args.distil,
-                                                                                                      args.des, ii)
-
-        exp = Exp(args)  # set experiments
-        print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
-        exp.test(setting, test=1)
-        torch.cuda.empty_cache()
+    return args
 
 
 if __name__ == "__main__":
