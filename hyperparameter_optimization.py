@@ -53,7 +53,7 @@ def evaluate(individual):
     args.train_epochs = train_epochs
     args.itr = itr
 
-    if freq == 'h':
+    if args.freq == 'h':
         args.data = 'ETTh1'
     else:
         args.data = 'ETTm1'
