@@ -42,8 +42,12 @@ class Dataset_ETT_hour(Dataset):
         df_raw = pd.read_csv(os.path.join(self.root_path,
                                           self.data_path))
 
-        border1s = [0, 12 * 30 * 24 - self.seq_len, 12 * 30 * 24 + 4 * 30 * 24 - self.seq_len]
-        border2s = [12 * 30 * 24, 12 * 30 * 24 + 4 * 30 * 24, 12 * 30 * 24 + 8 * 30 * 24]
+        total_length = len(df_raw)
+        train_size = int(0.6 * total_length)
+        val_size = int(0.2 * total_length)
+
+        border1s = [0, train_size - self.seq_len, train_size + val_size - self.seq_len]
+        border2s = [train_size, train_size + val_size, total_length]
         border1 = border1s[self.set_type]
         border2 = border2s[self.set_type]
 
@@ -130,8 +134,12 @@ class Dataset_ETT_minute(Dataset):
         df_raw = pd.read_csv(os.path.join(self.root_path,
                                           self.data_path))
 
-        border1s = [0, 12 * 30 * 24 * 4 - self.seq_len, 12 * 30 * 24 * 4 + 4 * 30 * 24 * 4 - self.seq_len]
-        border2s = [12 * 30 * 24 * 4, 12 * 30 * 24 * 4 + 4 * 30 * 24 * 4, 12 * 30 * 24 * 4 + 8 * 30 * 24 * 4]
+        total_length = len(df_raw)
+        train_size = int(0.6 * total_length)
+        val_size = int(0.2 * total_length)
+
+        border1s = [0, train_size - self.seq_len, train_size + val_size - self.seq_len]
+        border2s = [train_size, train_size + val_size, total_length]
         border1 = border1s[self.set_type]
         border2 = border2s[self.set_type]
 

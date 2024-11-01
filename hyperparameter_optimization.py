@@ -19,23 +19,40 @@ toolbox = base.Toolbox()
 toolbox.register("d_model", random.choice, [256, 512, 1024])  # Define ranges
 toolbox.register("batch_size", random.choice, [16, 32, 64])
 toolbox.register("learning_rate", random.uniform, 1e-5, 1e-3)
-# toolbox.register("freq", random.choice, ['s', 't', 'h', 'd', 'b', 'w', 'm'])
 toolbox.register("freq", random.choice, ['t', 'h'])
+toolbox.register("features", random.choice, ['M', 'S', 'MS'])
+toolbox.register("n_heads", random.randint, 1, 10)
+toolbox.register("e_layers", random.randint, 1, 10)
+toolbox.register("d_layers", random.randint, 1, 10)
+toolbox.register("moving_avg", random.randint, 10, 40)
+toolbox.register("train_epochs", random.randint, 1, 10)
+toolbox.register("itr", random.randint, 1, 5)
 
 
 # Register individual and population creation
 toolbox.register("individual", tools.initCycle, creator.Individual,
-                 (toolbox.d_model, toolbox.batch_size, toolbox.learning_rate, toolbox.freq))
+                 (toolbox.d_model, toolbox.batch_size,
+                  toolbox.learning_rate, toolbox.freq, toolbox.features,
+                  toolbox.n_heads, toolbox.e_layers, toolbox.d_layers,
+                  toolbox.moving_avg, toolbox.train_epochs, toolbox.itr))
 toolbox.register("population", tools.initRepeat, list, toolbox.individual)
 
 # Fitness function
 def evaluate(individual):
     args = make_args()
-    d_model, batch_size, learning_rate, freq = individual
+    d_model, batch_size, learning_rate, freq, features, n_heads, e_layers, d_layers, moving_avg, train_epochs, itr = individual
     args.d_model = d_model
     args.batch_size = batch_size
     args.learning_rate = learning_rate
     args.freq = freq
+    args.features = features
+    args.n_heads = n_heads
+    args.e_layers = e_layers
+    args.d_layers = d_layers
+    args.moving_avg = moving_avg
+    args.train_epochs = train_epochs
+    args.itr = itr
+
     if freq == 'h':
         args.data = 'ETTh1'
     else:
@@ -44,10 +61,7 @@ def evaluate(individual):
     args.data_path = args.data + '.csv'
     args.model_id = args.data + '_' + str(args.seq_len) + '_' + str(args.pred_len)
 
-    args.features = 'S'
-
-
-    print('Args in experiment:::')
+    print('Args in experiment:')
     print(args)
 
     exp = Exp_Main(args)
