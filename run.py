@@ -111,7 +111,7 @@ def main():
         args.device_ids = [int(id_) for id_ in device_ids]
         args.gpu = args.device_ids[0]
 
-    # synch parameters based on freq parameter
+    # synch parameters
     if args.freq == 'h':
         args.data = 'ETTh1'
     else:
@@ -138,7 +138,7 @@ def main():
     print('Args in experiment:')
     print(args)
 
-    csvEMA(args.data_path, False)
+    # csvEMA(args.data_path, False)
     Exp = Exp_Main
 
     if args.is_training:

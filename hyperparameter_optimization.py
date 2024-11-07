@@ -57,6 +57,7 @@ def evaluate(individual):
     # args.train_epochs = 2
     # args.itr = 2
 
+    # synch parameters
     if args.freq == 'h':
         args.data = 'ETTh1'
     else:
@@ -64,6 +65,21 @@ def evaluate(individual):
 
     args.data_path = args.data + '.csv'
     args.model_id = args.data + '_' + str(args.seq_len) + '_' + str(args.pred_len)
+
+    multi_variate_count = 7
+    if args.features == 'M':
+        args.enc_in = multi_variate_count
+        args.dec_in = multi_variate_count
+        args.c_out = multi_variate_count
+    elif args.features == 'S':
+        args.enc_in = 1
+        args.dec_in = 1
+        args.c_out = 1
+    else:  # 'MS'
+        args.enc_in = multi_variate_count
+        args.dec_in = multi_variate_count
+        args.c_out = 1
+    #
 
     print('Args in experiment:')
     print(args)
@@ -162,7 +178,7 @@ def make_args():
 
     # data loader
     parser.add_argument('--data', type=str, required=False, default='ETTh1', help='dataset type')
-    parser.add_argument('--root_path', type=str, default='./dataset/ETT-small/', help='root path of the data file')
+    parser.add_argument('--root_path', type=str, default='./dataset/all_six_datasets/ETT-small/', help='root path of the data file')
     parser.add_argument('--data_path', type=str, default='ETTh1.csv', help='data file')
     parser.add_argument('--features', type=str, default='M',
                         help='forecasting task, options:[M, S, MS]; M:multivariate predict multivariate, S:univariate predict univariate, MS:multivariate predict univariate')
