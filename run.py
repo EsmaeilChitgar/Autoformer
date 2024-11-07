@@ -6,22 +6,26 @@ import random
 import numpy as np
 import pandas as pd
 
-def csvEMA():
+def csvEMA(ds_name='ETTh1.csv', remove_other_columns=False):
     # Load the CSV file
-    df = pd.read_csv('./dataset/ETT-small/ETTh1.csv')
+    df = pd.read_csv('./dataset/ETT-small/' + ds_name)
 
     # Define the span for the exponential moving average (EMA)
-    span = 10  # Adjust this value as needed for smoothing
+    span = 25  # Adjust this value as needed for smoothing
 
     # Calculate the exponential moving average
     df['EMA'] = df['OT'].ewm(span=span, adjust=False).mean()
 
-    # Reorder columns to place 'LULL_EMA' before 'OT'
-    columns = [col for col in df.columns if col != 'OT'] + ['OT']
-    df = df[columns]
+    if remove_other_columns:
+        # Keep only the 'date', 'LULL_EMA', and 'OT' columns
+        df = df[['date', 'EMA', 'OT']]
+    else:
+        # Reorder columns to place 'LULL_EMA' before 'OT'
+        columns = [col for col in df.columns if col != 'OT'] + ['OT']
+        df = df[columns]
 
     # Save the modified DataFrame back to the original CSV file (overwrite)
-    df.to_csv('./dataset/ETT-small/ETTh1.csv', index=False)
+    df.to_csv('./dataset/ETT-small/' + ds_name, index=False)
 
     # Display the first few rows of the modified DataFrame to verify
     print(df.head())
@@ -113,6 +117,9 @@ def main():
     else:
         args.data = 'ETTm1'
 
+    args.data_path = args.data + '.csv'
+    args.model_id = args.data + '_' + str(args.seq_len) + '_' + str(args.pred_len)
+
     multi_variate_count = 7
     if args.features == 'M':
         args.enc_in = multi_variate_count
@@ -126,15 +133,12 @@ def main():
         args.enc_in = multi_variate_count
         args.dec_in = multi_variate_count
         args.c_out = 1
-
-    args.data_path = args.data + '.csv'
-    args.model_id = args.data + '_' + str(args.seq_len) + '_' + str(args.pred_len)
     #
 
     print('Args in experiment:')
     print(args)
 
-    # csvEMA()
+    csvEMA(args.data_path, False)
     Exp = Exp_Main
 
     if args.is_training:
