@@ -1,0 +1,530 @@
+Use CPU
+1
+>>>>>>>start training : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+size of train is:  22
+size of val is:  8
+size of test is:  10
+Epoch: 1 cost time: 0.5545315742492676
+Epoch: 1, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 3.0095549
+Validation loss decreased (inf --> nan).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 0.4687979221343994
+Epoch: 2, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 3.0095549
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 0.7736728191375732
+Epoch: 3, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 3.0095549
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 0.5902078151702881
+Epoch: 4, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 3.0095549
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 0.4926185607910156
+Epoch: 5, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 3.0095549
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 0.4896564483642578
+Epoch: 6, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 3.0095549
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 0.4848041534423828
+Epoch: 7, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 3.0095549
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 0.5396363735198975
+Epoch: 8, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 3.0095549
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 0.7394304275512695
+Epoch: 9, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 3.0095549
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.90625e-07
+Epoch: 10 cost time: 0.7510883808135986
+Epoch: 10, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 3.0095549
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.953125e-07
+2
+>>>>>>>testing : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+size of test is:  10
+test shape: (10, 2, 1) (10, 2, 1)
+test shape: (10, 2, 1) (10, 2, 1)
+mse:3.0095551013946533, mae:1.4356088638305664
+3
+Use CPU
+1
+>>>>>>>start training : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_1>>>>>>>>>>>>>>>>>>>>>>>>>>
+size of train is:  22
+size of val is:  8
+size of test is:  10
+Epoch: 1 cost time: 0.4860515594482422
+Epoch: 1, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.2444843
+Validation loss decreased (inf --> nan).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 0.5088577270507812
+Epoch: 2, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.2444843
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 0.7219417095184326
+Epoch: 3, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.2444843
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 0.8090825080871582
+Epoch: 4, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.2444843
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 0.48460888862609863
+Epoch: 5, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.2444843
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 0.5250158309936523
+Epoch: 6, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.2444843
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 0.5546350479125977
+Epoch: 7, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.2444843
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 0.49733710289001465
+Epoch: 8, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.2444843
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 0.4946329593658447
+Epoch: 9, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.2444843
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.90625e-07
+Epoch: 10 cost time: 0.7873420715332031
+Epoch: 10, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.2444843
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.953125e-07
+2
+>>>>>>>testing : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_1<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+size of test is:  10
+test shape: (10, 2, 1) (10, 2, 1)
+test shape: (10, 2, 1) (10, 2, 1)
+mse:1.2444844245910645, mae:0.9243545532226562
+3
+Use CPU
+1
+>>>>>>>start training : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_2>>>>>>>>>>>>>>>>>>>>>>>>>>
+size of train is:  22
+size of val is:  8
+size of test is:  10
+Epoch: 1 cost time: 0.5904731750488281
+Epoch: 1, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1280792
+Validation loss decreased (inf --> nan).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 0.5680696964263916
+Epoch: 2, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1280792
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 0.5640404224395752
+Epoch: 3, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1280792
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 0.5520613193511963
+Epoch: 4, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1280792
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 0.89495849609375
+Epoch: 5, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1280792
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 0.5549054145812988
+Epoch: 6, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1280792
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 0.5251648426055908
+Epoch: 7, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1280792
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 0.5961415767669678
+Epoch: 8, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1280792
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 0.5452473163604736
+Epoch: 9, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1280792
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.90625e-07
+Epoch: 10 cost time: 0.570070743560791
+Epoch: 10, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1280792
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.953125e-07
+2
+>>>>>>>testing : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_2<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+size of test is:  10
+test shape: (10, 2, 1) (10, 2, 1)
+test shape: (10, 2, 1) (10, 2, 1)
+mse:2.1280791759490967, mae:1.2111948728561401
+3
+Use CPU
+1
+>>>>>>>start training : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_3>>>>>>>>>>>>>>>>>>>>>>>>>>
+size of train is:  22
+size of val is:  8
+size of test is:  10
+Epoch: 1 cost time: 0.5774900913238525
+Epoch: 1, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1217902
+Validation loss decreased (inf --> nan).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 0.6152639389038086
+Epoch: 2, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1217902
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 0.5440020561218262
+Epoch: 3, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1217902
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 0.569765567779541
+Epoch: 4, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1217902
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 0.6463079452514648
+Epoch: 5, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1217902
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 0.7964193820953369
+Epoch: 6, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1217902
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 0.6048300266265869
+Epoch: 7, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1217902
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 0.5576717853546143
+Epoch: 8, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1217902
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 0.6044995784759521
+Epoch: 9, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1217902
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.90625e-07
+Epoch: 10 cost time: 0.5763046741485596
+Epoch: 10, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 2.1217902
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.953125e-07
+2
+>>>>>>>testing : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_3<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+size of test is:  10
+test shape: (10, 2, 1) (10, 2, 1)
+test shape: (10, 2, 1) (10, 2, 1)
+mse:2.1217901706695557, mae:1.1999999284744263
+3
+Use CPU
+1
+>>>>>>>start training : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_4>>>>>>>>>>>>>>>>>>>>>>>>>>
+size of train is:  22
+size of val is:  8
+size of test is:  10
+Epoch: 1 cost time: 0.7695493698120117
+Epoch: 1, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.1695168
+Validation loss decreased (inf --> nan).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 0.7033579349517822
+Epoch: 2, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.1695168
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 0.612532377243042
+Epoch: 3, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.1695168
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 0.6360287666320801
+Epoch: 4, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.1695168
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 0.61452317237854
+Epoch: 5, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.1695168
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 1.0068669319152832
+Epoch: 6, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.1695168
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 0.639244794845581
+Epoch: 7, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.1695168
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 0.6239826679229736
+Epoch: 8, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.1695168
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 0.660642147064209
+Epoch: 9, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.1695168
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.90625e-07
+Epoch: 10 cost time: 0.5907163619995117
+Epoch: 10, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.1695168
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.953125e-07
+2
+>>>>>>>testing : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_4<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+size of test is:  10
+test shape: (10, 2, 1) (10, 2, 1)
+test shape: (10, 2, 1) (10, 2, 1)
+mse:1.169516921043396, mae:0.8935084342956543
+3
+Use CPU
+1
+>>>>>>>start training : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_5>>>>>>>>>>>>>>>>>>>>>>>>>>
+size of train is:  22
+size of val is:  8
+size of test is:  10
+Epoch: 1 cost time: 0.780127763748169
+Epoch: 1, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.7003689
+Validation loss decreased (inf --> nan).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 0.7232329845428467
+Epoch: 2, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.7003689
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 0.6820380687713623
+Epoch: 3, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.7003689
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 0.622443675994873
+Epoch: 4, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.7003689
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 0.8483390808105469
+Epoch: 5, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.7003689
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 0.8149271011352539
+Epoch: 6, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.7003689
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 0.686269998550415
+Epoch: 7, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.7003689
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 0.6352400779724121
+Epoch: 8, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.7003689
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 0.6744680404663086
+Epoch: 9, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.7003689
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.90625e-07
+Epoch: 10 cost time: 0.6281158924102783
+Epoch: 10, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.7003689
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.953125e-07
+2
+>>>>>>>testing : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_5<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+size of test is:  10
+test shape: (10, 2, 1) (10, 2, 1)
+test shape: (10, 2, 1) (10, 2, 1)
+mse:1.700369119644165, mae:1.0626885890960693
+3
+Use CPU
+1
+>>>>>>>start training : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_6>>>>>>>>>>>>>>>>>>>>>>>>>>
+size of train is:  22
+size of val is:  8
+size of test is:  10
+Epoch: 1 cost time: 0.6327636241912842
+Epoch: 1, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.5849757
+Validation loss decreased (inf --> nan).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 0.8102810382843018
+Epoch: 2, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.5849757
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 0.7027847766876221
+Epoch: 3, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.5849757
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 0.623748779296875
+Epoch: 4, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.5849757
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 1.0849478244781494
+Epoch: 5, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.5849757
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 0.6710209846496582
+Epoch: 6, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.5849757
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 0.6498854160308838
+Epoch: 7, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.5849757
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 0.7305915355682373
+Epoch: 8, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.5849757
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 1.0901203155517578
+Epoch: 9, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.5849757
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.90625e-07
+Epoch: 10 cost time: 0.763983964920044
+Epoch: 10, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.5849757
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.953125e-07
+2
+>>>>>>>testing : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_6<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+size of test is:  10
+test shape: (10, 2, 1) (10, 2, 1)
+test shape: (10, 2, 1) (10, 2, 1)
+mse:1.5849757194519043, mae:1.0336601734161377
+3
+Use CPU
+1
+>>>>>>>start training : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_7>>>>>>>>>>>>>>>>>>>>>>>>>>
+size of train is:  22
+size of val is:  8
+size of test is:  10
+Epoch: 1 cost time: 0.8442888259887695
+Epoch: 1, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.4303213
+Validation loss decreased (inf --> nan).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 1.3009238243103027
+Epoch: 2, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.4303213
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 0.8197891712188721
+Epoch: 3, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.4303213
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 0.7763581275939941
+Epoch: 4, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.4303213
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 0.8280642032623291
+Epoch: 5, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.4303213
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 0.701179027557373
+Epoch: 6, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.4303213
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 0.881420373916626
+Epoch: 7, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.4303213
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 0.7889688014984131
+Epoch: 8, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.4303213
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 0.8100385665893555
+Epoch: 9, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.4303213
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.90625e-07
+Epoch: 10 cost time: 0.7554194927215576
+Epoch: 10, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.4303213
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.953125e-07
+2
+>>>>>>>testing : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_7<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+size of test is:  10
+test shape: (10, 2, 1) (10, 2, 1)
+test shape: (10, 2, 1) (10, 2, 1)
+mse:1.4303213357925415, mae:0.9838500022888184
+3
+Use CPU
+1
+>>>>>>>start training : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_8>>>>>>>>>>>>>>>>>>>>>>>>>>
+size of train is:  22
+size of val is:  8
+size of test is:  10
+Epoch: 1 cost time: 0.8086953163146973
+Epoch: 1, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.9064085
+Validation loss decreased (inf --> nan).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 0.7922353744506836
+Epoch: 2, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.9064085
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 0.8401832580566406
+Epoch: 3, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.9064085
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 0.8426964282989502
+Epoch: 4, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.9064085
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 1.1187248229980469
+Epoch: 5, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.9064085
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 0.84291672706604
+Epoch: 6, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.9064085
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 0.7486245632171631
+Epoch: 7, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.9064085
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 0.8226509094238281
+Epoch: 8, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.9064085
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 0.8876760005950928
+Epoch: 9, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.9064085
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.90625e-07
+Epoch: 10 cost time: 0.9199602603912354
+Epoch: 10, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.9064085
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.953125e-07
+2
+>>>>>>>testing : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_8<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+size of test is:  10
+test shape: (10, 2, 1) (10, 2, 1)
+test shape: (10, 2, 1) (10, 2, 1)
+mse:1.906408667564392, mae:1.1542613506317139
+3
+Use CPU
+1
+>>>>>>>start training : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_9>>>>>>>>>>>>>>>>>>>>>>>>>>
+size of train is:  22
+size of val is:  8
+size of test is:  10
+Epoch: 1 cost time: 0.7586846351623535
+Epoch: 1, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.8576149
+Validation loss decreased (inf --> nan).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 0.9296069145202637
+Epoch: 2, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.8576149
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 1.2437055110931396
+Epoch: 3, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.8576149
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 0.7206659317016602
+Epoch: 4, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.8576149
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 0.8416483402252197
+Epoch: 5, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.8576149
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 0.7735209465026855
+Epoch: 6, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.8576149
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.125e-06
+Epoch: 7 cost time: 0.7807700634002686
+Epoch: 7, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.8576149
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.5625e-06
+Epoch: 8 cost time: 0.8727271556854248
+Epoch: 8, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.8576149
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 7.8125e-07
+Epoch: 9 cost time: 0.7983584403991699
+Epoch: 9, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.8576149
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 3.90625e-07
+Epoch: 10 cost time: 0.79996657371521
+Epoch: 10, Steps: 0 | Train Loss: nan Vali Loss: nan Test Loss: 1.8576149
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 1.953125e-07
+2
+>>>>>>>testing : ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_9<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+size of test is:  10
+test shape: (10, 2, 1) (10, 2, 1)
+test shape: (10, 2, 1) (10, 2, 1)
+mse:1.857614517211914, mae:1.0951042175292969
+3
