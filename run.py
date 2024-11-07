@@ -8,7 +8,7 @@ import pandas as pd
 
 def csvEMA(ds_name='ETTh1.csv', remove_other_columns=False):
     # Load the CSV file
-    df = pd.read_csv('./dataset/ETT-small/' + ds_name)
+    df = pd.read_csv('./dataset/all_six_datasets/ETT-small/' + ds_name)
 
     # Define the span for the exponential moving average (EMA)
     span = 25  # Adjust this value as needed for smoothing
@@ -25,7 +25,7 @@ def csvEMA(ds_name='ETTh1.csv', remove_other_columns=False):
         df = df[columns]
 
     # Save the modified DataFrame back to the original CSV file (overwrite)
-    df.to_csv('./dataset/ETT-small/' + ds_name, index=False)
+    df.to_csv('./dataset/all_six_datasets/ETT-small/' + ds_name, index=False)
 
     # Display the first few rows of the modified DataFrame to verify
     print(df.head())
@@ -46,7 +46,7 @@ def main():
 
     # data loader
     parser.add_argument('--data', type=str, required=False, default='ETTh1', help='dataset type')
-    parser.add_argument('--root_path', type=str, default='./dataset/ETT-small/', help='root path of the data file')
+    parser.add_argument('--root_path', type=str, default='./dataset/all_six_datasets/ETT-small/', help='root path of the data file')
     parser.add_argument('--data_path', type=str, default='ETTh1.csv', help='data file')
     parser.add_argument('--features', type=str, default='M',
                         help='forecasting task, options:[M, S, MS]; M:multivariate predict multivariate, S:univariate predict univariate, MS:multivariate predict univariate')
