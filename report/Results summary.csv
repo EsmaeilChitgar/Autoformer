@@ -1,0 +1,5 @@
+﻿case,device,epoch,iteration,freq,"features (S,M,MS)",mse,mae
+feature_OT_ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_0,colab,10,10,h,OT,1.858 ,1.095 
+feature_All_ETTh1_6_2_Autoformer_ETTh1_ftM_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_0,"""","""","""","""",All,1.603 ,1.011 
+feature_All-EMA_ETTh1_6_2_Autoformer_ETTh1_ftM_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_0,"""","""","""","""",All + EMA,1.657 ,1.000 
+features_OT-EMA_ETTh1_6_2_Autoformer_ETTh1_ftM_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_0,"""","""","""","""",OT + EMA,1.118 ,0.824 
