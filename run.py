@@ -4,7 +4,27 @@ import torch
 from exp.exp_main import Exp_Main
 import random
 import numpy as np
+import pandas as pd
 
+def csvEMA():
+    # Load the CSV file
+    df = pd.read_csv('./dataset/ETT-small/ETTh1.csv')
+
+    # Define the span for the exponential moving average (EMA)
+    span = 10  # Adjust this value as needed for smoothing
+
+    # Calculate the exponential moving average
+    df['EMA'] = df['OT'].ewm(span=span, adjust=False).mean()
+
+    # Reorder columns to place 'LULL_EMA' before 'OT'
+    columns = [col for col in df.columns if col != 'OT'] + ['OT']
+    df = df[columns]
+
+    # Save the modified DataFrame back to the original CSV file (overwrite)
+    df.to_csv('./dataset/ETT-small/ETTh1.csv', index=False)
+
+    # Display the first few rows of the modified DataFrame to verify
+    print(df.head())
 
 def main():
     fix_seed = 2021
@@ -93,6 +113,20 @@ def main():
     else:
         args.data = 'ETTm1'
 
+    multi_variate_count = 7
+    if args.features == 'M':
+        args.enc_in = multi_variate_count
+        args.dec_in = multi_variate_count
+        args.c_out = multi_variate_count
+    elif args.features == 'S':
+        args.enc_in = 1
+        args.dec_in = 1
+        args.c_out = 1
+    else:  # 'MS'
+        args.enc_in = multi_variate_count
+        args.dec_in = multi_variate_count
+        args.c_out = 1
+
     args.data_path = args.data + '.csv'
     args.model_id = args.data + '_' + str(args.seq_len) + '_' + str(args.pred_len)
     #
@@ -100,6 +134,7 @@ def main():
     print('Args in experiment:')
     print(args)
 
+    # csvEMA()
     Exp = Exp_Main
 
     if args.is_training:
@@ -137,22 +172,7 @@ def main():
             torch.cuda.empty_cache()
     else:
         ii = 0
-        setting = '{}_{}_{}_ft{}_sl{}_ll{}_pl{}_dm{}_nh{}_el{}_dl{}_df{}_fc{}_eb{}_dt{}_{}_{}'.format(args.model_id,
-                                                                                                      args.model,
-                                                                                                      args.data,
-                                                                                                      args.features,
-                                                                                                      args.seq_len,
-                                                                                                      args.label_len,
-                                                                                                      args.pred_len,
-                                                                                                      args.d_model,
-                                                                                                      args.n_heads,
-                                                                                                      args.e_layers,
-                                                                                                      args.d_layers,
-                                                                                                      args.d_ff,
-                                                                                                      args.factor,
-                                                                                                      args.embed,
-                                                                                                      args.distil,
-                                                                                                      args.des, ii)
+        setting = '{}_{}_{}_ft{}_sl{}_ll{}_pl{}_dm{}_nh{}_el{}_dl{}_df{}_fc{}_eb{}_dt{}_{}_{}'.format(args.model_id,                                                                                         args.des, ii)
 
         exp = Exp(args)  # set experiments
         print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))

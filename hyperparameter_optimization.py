@@ -24,7 +24,7 @@ toolbox.register("features", random.choice, ['M', 'S', 'MS'])
 toolbox.register("n_heads", random.randint, 1, 10)
 toolbox.register("e_layers", random.randint, 1, 10)
 toolbox.register("d_layers", random.randint, 1, 10)
-toolbox.register("moving_avg", random.randint, 10, 40)
+toolbox.register("moving_avg", lambda: random.randrange(11, 40, 2))
 toolbox.register("train_epochs", random.randint, 1, 10)
 toolbox.register("itr", random.randint, 1, 5)
 
@@ -52,6 +52,10 @@ def evaluate(individual):
     args.moving_avg = moving_avg
     args.train_epochs = train_epochs
     args.itr = itr
+
+    # args.freq = 'h'
+    # args.train_epochs = 2
+    # args.itr = 2
 
     if args.freq == 'h':
         args.data = 'ETTh1'
