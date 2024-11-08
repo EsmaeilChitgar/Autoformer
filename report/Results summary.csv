@@ -1,8 +1,27 @@
 ﻿,,case,device,epoch,iteration,freq,"features (S,M,MS)",mse,mae
-1,,feature_OT_ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_0,colab,10,10,h,OT,1.8580,1.0950
-2,,feature_All_ETTh1_6_2_Autoformer_ETTh1_ftM_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_0,"""","""","""","""",All,1.6030,1.0110
-3,,feature_All-EMA_ETTh1_6_2_Autoformer_ETTh1_ftM_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_0,"""","""","""","""",All + EMA,1.6570,1.0000
-4,,features_OT-EMA_ETTh1_6_2_Autoformer_ETTh1_ftM_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_0,"""","""","""","""",OT + EMA,1.1180,0.8240
-5,,feature_OT_ETTh1_96_24_Autoformer_ETTh1_ftS_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,"""","""",3,"""",OT,0.0997,0.2487
-6,good,features_OT-EMA_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,"""","""",3,"""",OT + EMA,0.0924,0.2245
-7,"bad(real: 0.118, 0.256)",features_OT-EMA_ETTm2_96_192_Autoformer_ETTm2_ftM_sl96_ll48_pl192_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,"""","""",3,"""",OT + EMA,0.2357,0.3700
+0,paper,features_OT_ETTm2_96_192_Autoformer_ETTm2_ftS_sl96_ll48_pl192_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,colab,10,3,m2,OT,0.260481626,0.391359
+1,"bad(real: 0.118, 0.256), good (in my exp)",features_OT-EMA_ETTm2_96_192_Autoformer_ETTm2_ftM_sl96_ll48_pl192_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,"""","""","""","""",OT + EMA,0.2357,0.369987
+2,,feature_OT_ETTh1_6_2_Autoformer_ETTh1_ftS_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_0,"""","""",10,h1,OT,1.858,1.095000
+3,,feature_All_ETTh1_6_2_Autoformer_ETTh1_ftM_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_0,"""","""","""","""",All,1.603,1.011000
+4,,feature_All-EMA_ETTh1_6_2_Autoformer_ETTh1_ftM_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_0,"""","""","""","""",All + EMA,1.657,1.000000
+5,,features_OT-EMA_ETTh1_6_2_Autoformer_ETTh1_ftM_sl6_ll3_pl2_dm512_nh10_el4_dl4_df2048_fc1_ebtimeF_dtTrue_Exp_0,"""","""","""","""",OT + EMA,1.118,0.824000
+6,,feature_OT_ETTh1_96_24_Autoformer_ETTh1_ftS_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,"""","""",3,"""",OT,0.0997,0.248700
+7,good,features_OT-EMA_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,"""","""","""","""",OT + EMA,0.0924,0.224500
+8,,features_AllButOne_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0,"""","""",1,"""",All - HUFL,0.440457165,0.471499
+8,,features_AllButOne_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0,"""","""","""","""",All - HULL,0.569870591,0.535382
+8,,features_AllButOne_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0,"""","""","""","""",All - MUFL,0.466675103,0.502596
+8,,features_AllButOne_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0,"""","""","""","""",All - MULL,0.524286628,0.515520
+8,,features_AllButOne_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0,"""","""","""","""",All - LUFL,0.466670811,0.478316
+8,,features_AllButOne_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0,"""","""","""","""",All - LULL,0.555142462,0.539379
+9,,features_AllButOneWithIteration_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,"""","""",3,"""",All - HUFL,0.43556419,0.475627
+9,,features_AllButOneWithIteration_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,"""","""","""","""",All - HULL,0.539149702,0.520943
+9,,features_AllButOneWithIteration_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,"""","""","""","""",All - MUFL,0.456671655,0.486012
+9,,features_AllButOneWithIteration_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,"""","""","""","""",All - MULL,0.534252286,0.524025
+9,,features_AllButOneWithIteration_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,"""","""","""","""",All - LUFL,0.465978354,0.480428
+9,,features_AllButOneWithIteration_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,"""","""","""","""",All - LULL,0.603289306,0.562921
+10,,features_AllPlusEMAButOneWithIteration_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,"""","""","""","""",All + EMA - HUFL,0.385844707,0.440845
+10,,features_AllPlusEMAButOneWithIteration_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,"""","""","""","""",All + EMA - HULL,0.460285366,0.465745
+10,,features_AllPlusEMAButOneWithIteration_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,"""","""","""","""",All + EMA - MUFL,0.379674464,0.437337
+10,,features_AllPlusEMAButOneWithIteration_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,"""","""","""","""",All + EMA - MULL,0.47796616,0.473154
+10,,features_AllPlusEMAButOneWithIteration_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,"""","""","""","""",All + EMA - LUFL,0.398891181,0.431836
+10,,features_AllPlusEMAButOneWithIteration_ETTh1_96_24_Autoformer_ETTh1_ftM_sl96_ll48_pl24_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_2,"""","""","""","""",All + EMA - LULL,0.464757174,0.484662
