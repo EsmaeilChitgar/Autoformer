@@ -1,0 +1,37 @@
+Use CPU
+1
+>>>>>>>start training : ETTm2_96_96_Autoformer_ETTm2_ftM_sl96_ll48_pl96_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+size of train is:  656
+size of val is:  187
+size of test is:  189
+Epoch: 1 cost time: 116.00834631919861
+Epoch: 1, Steps: 20 | Train Loss: 0.6752615 Vali Loss: 0.3118235 Test Loss: 1.1533549
+Validation loss decreased (inf --> 0.311824).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 116.47695922851562
+Epoch: 2, Steps: 20 | Train Loss: 0.5388531 Vali Loss: 0.3112285 Test Loss: 1.3801068
+Validation loss decreased (0.311824 --> 0.311228).  Saving model ...
+Updating learning rate to 5e-05
+Epoch: 3 cost time: 114.2076964378357
+Epoch: 3, Steps: 20 | Train Loss: 0.5146155 Vali Loss: 0.2955402 Test Loss: 1.2762545
+Validation loss decreased (0.311228 --> 0.295540).  Saving model ...
+Updating learning rate to 2.5e-05
+Epoch: 4 cost time: 114.2708375453949
+Epoch: 4, Steps: 20 | Train Loss: 0.4956964 Vali Loss: 0.3568361 Test Loss: 1.4024334
+EarlyStopping counter: 1 out of 3
+Updating learning rate to 1.25e-05
+Epoch: 5 cost time: 117.71243572235107
+Epoch: 5, Steps: 20 | Train Loss: 0.4811688 Vali Loss: 0.3182121 Test Loss: 1.3748764
+EarlyStopping counter: 2 out of 3
+Updating learning rate to 6.25e-06
+Epoch: 6 cost time: 114.07038116455078
+Epoch: 6, Steps: 20 | Train Loss: 0.4756815 Vali Loss: 0.3361159 Test Loss: 1.3891592
+EarlyStopping counter: 3 out of 3
+Early stopping
+2
+>>>>>>>testing : ETTm2_96_96_Autoformer_ETTm2_ftM_sl96_ll48_pl96_dm512_nh18_el2_dl1_df2048_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+size of test is:  189
+test shape: (189, 96, 5) (189, 96, 5)
+test shape: (189, 96, 5) (189, 96, 5)
+mse:1.2937155961990356, mae:0.8330852389335632
+3
