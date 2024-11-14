@@ -1,34 +1,11 @@
 import argparse
-import os
-import torch
-from exp.exp_main import Exp_Main
 import random
+
 import numpy as np
-import pandas as pd
+import torch
 
-def csvEMA(ds_name='ETTh1.csv', remove_other_columns=False):
-    # Load the CSV file
-    df = pd.read_csv('./dataset/all_six_datasets/ETT-small/' + ds_name)
+from exp.exp_main import Exp_Main
 
-    # Define the span for the exponential moving average (EMA)
-    span = 25  # Adjust this value as needed for smoothing
-
-    # Calculate the exponential moving average
-    df['EMA'] = df['OT'].ewm(span=span, adjust=False).mean()
-
-    if remove_other_columns:
-        # Keep only the 'date', 'LULL_EMA', and 'OT' columns
-        df = df[['date', 'EMA', 'OT']]
-    else:
-        # Reorder columns to place 'LULL_EMA' before 'OT'
-        columns = [col for col in df.columns if col != 'OT'] + ['OT']
-        df = df[columns]
-
-    # Save the modified DataFrame back to the original CSV file (overwrite)
-    df.to_csv('./dataset/all_six_datasets/ETT-small/' + ds_name, index=False)
-
-    # Display the first few rows of the modified DataFrame to verify
-    print(df.head())
 
 def main():
     fix_seed = 2021
@@ -85,7 +62,7 @@ def main():
 
     # optimization
     parser.add_argument('--num_workers', type=int, default=10, help='data loader num workers')
-    parser.add_argument('--itr', type=int, default=2, help='experiments times')
+    parser.add_argument('--itr', type=int, default=1, help='experiments times')
     parser.add_argument('--train_epochs', type=int, default=10, help='train epochs')
     parser.add_argument('--batch_size', type=int, default=32, help='batch size of train input data')
     parser.add_argument('--patience', type=int, default=3, help='early stopping patience')
@@ -96,7 +73,7 @@ def main():
     parser.add_argument('--use_amp', action='store_true', help='use automatic mixed precision training', default=False)
 
     # GPU
-    parser.add_argument('--use_gpu', type=bool, default=False, help='use gpu')
+    parser.add_argument('--use_gpu', type=bool, default=True, help='use gpu')
     parser.add_argument('--gpu', type=int, default=0, help='gpu')
     parser.add_argument('--use_multi_gpu', action='store_true', help='use multiple gpus', default=False)
     parser.add_argument('--devices', type=str, default='0,1,2,3', help='device ids of multile gpus')
@@ -115,12 +92,13 @@ def main():
     if args.freq == 'h':
         args.data = 'ETTh1'
     else:
-        args.data = 'ETTm1'
+        args.data = 'ETTm2'
 
     args.data_path = args.data + '.csv'
+    args.root_path = './dataset/all_six_datasets/ETT-small/'
     args.model_id = args.data + '_' + str(args.seq_len) + '_' + str(args.pred_len)
 
-    multi_variate_count = 7
+    multi_variate_count = 3
     if args.features == 'M':
         args.enc_in = multi_variate_count
         args.dec_in = multi_variate_count
@@ -138,7 +116,8 @@ def main():
     print('Args in experiment:')
     print(args)
 
-    # csvEMA(args.data_path, False)
+    # lstm_cnn_hybrid.csvEMA(args.data_path, False)
+    # lstm_cnn_hybrid.add_3selected_features(args.data_path)
     Exp = Exp_Main
 
     if args.is_training:
